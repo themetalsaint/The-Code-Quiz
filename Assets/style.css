@@ -1,3 +1,28 @@
 body {
     background-color: purple;
 }
+
+h1{
+    text-align: center;
+}
+
+
+
+
+/*Elements*/
+#timer{
+    text-align: end
+}
+
+
+
+
+/*Classes*/
+.button{
+    height:50px;
+    width:100px;
+    display: block;
+    cursor: pointer;
+    border: solid maroon
+    
+}
