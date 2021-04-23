@@ -1,3 +1,5 @@
+// IT'S OVERWHELMING BUT IT'S OKAY. JUST BREATH. YOU GOT THIS
+
 // A start button
 // Questions & answers pop up
 // I need questions on the page that change when answered.
@@ -9,6 +11,23 @@
 // A high scores tab that doesn't go away when refreshed
 // Button to play again and clear high scores 
 
+
+
+
+//Funtions I need:
+// startGame()
+// replayGame()
+// clearHighscores()
+
+
+//**Code For Sound */
+//const correctSound = new Audio("../sound/symphonic-slam-sound-effect.mp3");
+//const incorrectSound = new Audio("../sound/punch-sound-effect.mp3"); 
+
+
+
+
+//**Quiz Questions**
 var questions = [
     {
     question: "How many elements can you apply an 'ID' attribute to?",
@@ -52,31 +71,20 @@ var questions = [
     choiceC: "World Wide Web",
     choiceD: "Winston Wants Waffles",
     correctAnswer: "c"},
-        
-    
-    ];
+      
+];  
+
+//**Gather your pieces**
+var quizTimer = document.getElementById("timer")
+var buttonA = document.getElementById("a");
+var buttonB = document.getElementById("b");
+var buttonC = document.getElementById("c");
+var buttonD = document.getElementById("d");
+var start = document.getElementById("startpage")
+var end = document.getElementById("loseScreen")
+var endButtons = document.getElementById("endButtons")
+var score = 0
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//**Code For Sound */
-//const correctSound = new Audio("../sound/symphonic-slam-sound-effect.mp3");
-//const incorrectSound = new Audio("../sound/punch-sound-effect.mp3"); 

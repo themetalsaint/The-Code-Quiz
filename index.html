@@ -9,27 +9,36 @@
 </head>
 <header>
     <h1> The Code Quiz</h1>
+    
+    <p>Highscores </p>
+    <p id= "timer">Timer:</p>
 </header>
-
-<nav>Highscores </nav>
-
 <body>
-<p id= "timer">Timer:</p>
-<containter>
-<button id="start">Start Game</button>
+
+<containter id = "startpage">
+    <p>This quiz will test your knowledge of coding so far and my ability to present said code.</p>
+    <button id="start">Start Game</button>
+    </containter>
+
 
     <div id = "answers">
-    <button class="button" id="A" onclick="checkAnswer('a')"></button>
-    <button class="button" id="B" onclick="checkAnswer('b')"></button>
-    <button class="button" id="C" onclick="checkAnswer('c')"></button>
-    <button class="button" id="D" onclick="checkAnswer('d')"></button>
-  </div>
+    <button class="button" id="a" onclick="checkAnswer('a')"></button>
+    <button class="button" id="b" onclick="checkAnswer('b')"></button>
+    <button class="button" id="c" onclick="checkAnswer('c')"></button>
+    <button class="button" id="d" onclick="checkAnswer('d')"></button>
+    </div>
     
-</containter>
+    <div id = "loseScreen">
 
+        <h2>Final Score</h2>
 
+        <div id="endButtons">
+            <button class="button2" id="playAgain" onclick="replayQuiz()">Play Again</button>
+            <button class="button2" id="clearHighscore" onclick="clearHighscores()">Clear Highscore</button>
+        </div>
+    </div>
 
-
+<!-- Form for highscores? -->
 
 
 
