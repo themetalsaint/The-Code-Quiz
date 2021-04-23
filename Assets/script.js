@@ -17,10 +17,13 @@
 //Funtions I need:
 // startGame()
 // replayGame()
+// showHighscores
 // clearHighscores()
+// checkAnswers()
 
+// For loop to check answers and move to next question?/
 
-//**Code For Sound */
+//**Code For Sound from class */
 //const correctSound = new Audio("../sound/symphonic-slam-sound-effect.mp3");
 //const incorrectSound = new Audio("../sound/punch-sound-effect.mp3"); 
 
@@ -84,7 +87,7 @@ var start = document.getElementById("startpage")
 var end = document.getElementById("loseScreen")
 var endButtons = document.getElementById("endButtons")
 var score = 0
-
-
+var startingTime = 76
+var timePenalty = 10
 
 
