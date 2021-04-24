@@ -28,6 +28,13 @@ h1, p{
     left: 44%;
 
 }
+#quizPage, 
+#endScreen {
+display: none;
+
+
+}
+
 
 /*Classes*/
 .button{
@@ -39,4 +46,10 @@ h1, p{
     padding: 100px;
     
      */
+}
+.hidden{
+    display: none;
+}
+.reveal{
+    display:block;
 }

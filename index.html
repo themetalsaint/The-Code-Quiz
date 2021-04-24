@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-<link rel="stylesheet" href="./Assets/style.css">
-</head>
-<header>
-    <h1> The Code Quiz</h1>
-    
-    <p>Highscores </p>
-    <p id= "timer">Timer:</p>
-</header>
-<body>
+    <link rel="stylesheet" href="./Assets/style.css" />
+  </head>
+  <header>
+    <h1>The Code Quiz</h1>
 
-<containter id = "startpage">
-    <p>This quiz will test your knowledge of coding so far and my ability to present said code.</p>
+    <p>Highscores</p>
+    <p id="timer">Timer:</p>
+  </header>
+  <body>
+    <containter id="startpage">
+      <p>
+        This quiz will test your knowledge of coding so far and my ability to
+        present said code.
+      </p>
 
-    <button id="start">Start Game</button>
-
-    <button id="highscores" onclick="showHighscores()">Highscores</button>
+      <button id="start">Start Game</button>
     </containter>
 
+    <div id="quizPage">
+      <!-- <div id="questions"> -->
+        <h2 id="trivia"></h2>
 
-    <div id = "answers">
-    <button class="button" id="a" onclick="checkAnswer('a')"></button>
+        <div id="answers">
+          <!-- <button class="button" id="a" onclick="checkAnswer('a')"></button>
     <button class="button" id="b" onclick="checkAnswer('b')"></button>
     <button class="button" id="c" onclick="checkAnswer('c')"></button>
-    <button class="button" id="d" onclick="checkAnswer('d')"></button>
-    </div>
-    
-    <div id = "loseScreen">
-
-        <h2>Final Score</h2>
-
-        <div id="endButtons">
-            <button class="button2" id="playAgain" onclick="replayQuiz()">Play Again</button>
-            <button class="button2" id="clearHighscore" onclick="clearHighscores()">Clear Highscore</button>
+    <button class="button" id="d" onclick="checkAnswer('d')"></button> -->
         </div>
+      <!-- </div> -->
+    </div>
+    <div id="endScreen">
+      <h2>Player Initals</h2>
+      <h2>Final Score</h2>
+
+      <div id="endButtons">
+        <button class="button2" id="playAgain" onclick="replayQuiz()">
+          Play Again
+        </button>
+        <button class="button2" id="clearHighscore" onclick="clearHighscores()">
+          Clear Highscore
+        </button>
+        <button id="highscores" onclick="showHighscores()">Highscores</button>
+        <form>
+          <label>Intials:</label>
+          <input type="text" id="initials" /><br />
+        </form>
+      </div>
     </div>
 
-<!-- Form for highscores? -->
+    <!-- Form for highscores? -->
 
-<form>
-    <label>Intials:</label>
-    <input type="text" id="initials"><br>
-</form>
-
-
-
-</body>
-
-
+    <script src="./Assets/script.js"></script>
+  </body>
 </html>
