@@ -36,57 +36,50 @@ var questions = [
 
     {
     question: "What does DOM stand for?",
-    choiceA: "Document Object Model",
-    choiceB: "Display Object Management",
-    choiceC: "Document Ordinance Model",
-    choiceD: "Desktop Oriented Mode",
-    correctAnswer: "a"},
+    options:["Document Object Model", "Display Object Management","Document Ordinance Model","Desktop Oriented Mode"],
+    correctAnswer: "a"
+    },
+
     {
     question: "What is used primarily to add styling to a web page?",
-    choiceA: "HTML",
-    choiceB: "CSS",
-    choiceC: "Python",
-    choiceD: "The Mouse",
+    options: ["HTML", "CSS", "Python","The Mouse",],
     correctAnswer: "b"},
+
     {
     question: "When is localStorage data cleared?",
-    choiceA: "No expiration time",
-    choiceB: "On page reload",
-    choiceC: "On browser close",
-    choiceD: "On computer restart",
-    correctAnswer: "a"},  
+    options: ["No expiration time","On page reload", "On browser close", "On computer restart",],
+    correctAnswer: "a"
+    },  
+
     {
     question: "What HTML attribute references an external JavaScript file?",
-    choiceA: "href",
-    choiceB: "h1",
-    choiceC: "class",
-    choiceD: "src",
-    correctAnswer: "d"},
+    options: ["href", "h1", "class", "src",],
+    correctAnswer: "d"
+    },
+
     {
     question: "What does WWW stand for?",
-    choiceA: "Web World Workings",
-    choiceB: "Window World Web",
-    choiceC: "World Wide Web",
-    choiceD: "Winston Wants Waffles",
-    correctAnswer: "c"},
+    options: ["Web World Workings", "Window World Web", "World Wide Web", "Winston Wants Waffles"],
+    correctAnswer: "c"
+    },
       
 ];  
 
 //**Gather your pieces**
-var quizTimer = document.getElementById("timer")
-var quiz = document.getElementById("quizPage")
+var quizTimer = document.getElementById("timer");
+var quiz = document.getElementById("quizPage");
 var buttonA = document.getElementById("a");
 var buttonB = document.getElementById("b");
 var buttonC = document.getElementById("c");
 var buttonD = document.getElementById("d");
 var start = document.getElementById("startpage");
-var startBtn = document.getElementById("start")
-var end = document.getElementById("endScreen")
-var endButtons = document.getElementById("endButtons")
-var answers = document.getElementById("answers")
-var score = 0
-var startingTime = 76
-var timePenalty = 10
+var startBtn = document.getElementById("start");
+var end = document.getElementById("endScreen");
+var endButtons = document.getElementById("endButtons");
+var answers = document.getElementById("answers");
+var score = 0;
+var startingTime = 76;
+var timePenalty = 10;
 var questionIndex = 0;
 
 
