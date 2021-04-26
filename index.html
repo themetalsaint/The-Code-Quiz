@@ -14,6 +14,7 @@
     <p id="timer">Timer:</p>
   </header>
   <body>
+    <!-- First Page -->
     <containter id="startpage">
       <p>
         This quiz will test your knowledge of coding so far and my ability to
@@ -22,14 +23,16 @@
 
       <button id="start">Start Game</button>
     </containter>
-
+    <!-- Questions Page -->
     <div id="quizPage" class="hidden">
      
         <h2 id="trivia"></h2>
 
         <div id="answers">
+        <div id="feedback" class="feedback hide"></div>
+          
         </div>
-    
+    <!-- Game Finish Page -->
     </div>
     <div id="endScreen" class ="hidden">
       <h2>Player Initals</h2>
@@ -50,7 +53,7 @@
       </div>
     </div>
 
-    <!-- Form for highscores? -->
+    
 
     <script src="./Assets/script.js"></script>
   </body>
