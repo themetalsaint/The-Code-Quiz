@@ -1,21 +1,4 @@
-// IT'S OVERWHELMING BUT IT'S OKAY. JUST BREATH. YOU GOT THIS
 
-// A start button
-// Questions & answers pop up
-// I need questions on the page that change when answered.
-// Buttons with answers that change.
-// A function that determines right & wrong
-// Keep track of scores (Local storage)
-// A timer that runs out
-// A form at the end that reflects scores and asked for initals
-// A high scores tab that doesn't go away when refreshed
-// Button to play again and clear high scores 
-
-
-
-
-
-// For loop to check answers and move to next question?/
 
 //**Code For Sound from class */
 //const correctSound = new Audio("../sound/symphonic-slam-sound-effect.mp3");
@@ -65,7 +48,7 @@ var questions = [
       
 ];  
 
-//**Gather your pieces**
+
 var quizTimer = document.getElementById("timer");
 var quiz = document.getElementById("quizPage");
 var buttonA = document.getElementById("a");
@@ -84,6 +67,9 @@ var score = 0;
 var timePenalty = 10;
 var questionIndex = 0;
 
+//sounds
+var sfxRight = new Audio("assets/sfx/correct.wav");
+var sfxWrong = new Audio("assets/sfx/incorrect.wav");
 
 
 //Funtions I need:
