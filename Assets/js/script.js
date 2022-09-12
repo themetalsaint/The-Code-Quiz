@@ -1,11 +1,20 @@
-
-
-//**Code For Sound from class */
-//const correctSound = new Audio("../sound/symphonic-slam-sound-effect.mp3");
-//const incorrectSound = new Audio("../sound/punch-sound-effect.mp3"); 
-
-
-
+var quizTimer = document.getElementById("timer");
+var quiz = document.getElementById("quizPage");
+var buttonA = document.getElementById("a");
+var buttonB = document.getElementById("b");
+var buttonC = document.getElementById("c");
+var buttonD = document.getElementById("d");
+var start = document.getElementById("startpage");
+var startBtn = document.getElementById("start");
+var end = document.getElementById("endScreen");
+var endButtons = document.getElementById("endButtons");
+var answers = document.getElementById("answers");
+var feedbackEl = document.querySelector("#feedback");
+// var time = question.length * 15;
+var score = 0;
+// var startingTime = 76;
+var timePenalty = 10;
+var questionIndex = 0;
 
 //**Quiz Questions**
 
@@ -49,23 +58,7 @@ var questions = [
 ];  
 
 
-var quizTimer = document.getElementById("timer");
-var quiz = document.getElementById("quizPage");
-var buttonA = document.getElementById("a");
-var buttonB = document.getElementById("b");
-var buttonC = document.getElementById("c");
-var buttonD = document.getElementById("d");
-var start = document.getElementById("startpage");
-var startBtn = document.getElementById("start");
-var end = document.getElementById("endScreen");
-var endButtons = document.getElementById("endButtons");
-var answers = document.getElementById("answers");
-var feedbackEl = document.querySelector("#feedback");
-// var time = question.length * 12.5;
-var score = 0;
-// var startingTime = 76;
-var timePenalty = 10;
-var questionIndex = 0;
+
 
 //sounds
 var sfxRight = new Audio("assets/sfx/correct.wav");
@@ -89,16 +82,6 @@ function startGame(){
     showQuestions();
 
 
-}
-
-function tick(){
-    //update timer
-    time--;
-    timeEl.textContent = time;
-
-//     if(time<=0){
-//         quizEnd();
-//     }
 }
 
 function showQuestions(){
@@ -161,8 +144,19 @@ function clickQuestions(){
     //     }
     }
 
+function quizEnd(){
+    //clearInterval(timer)
+}
 
+function tick(){
+    //update timer
+    time--;
+    timeEl.textContent = time;
 
+//     if(time<=0){
+//         quizEnd();
+//     }
+}
 
 
 
@@ -171,27 +165,10 @@ function clickQuestions(){
 
 
 
-
-
-
-
-
-
 // checkAnswers()
 
 
-
-
-
-
-
 // showHighscores()
-
-
-
-
-
-
 
 
 // clearHighscores()
@@ -202,11 +179,6 @@ function clickQuestions(){
 
 
 
-
-
-// quizEnd()
-
-
-
-
 startBtn.onclick = startGame;
+
+// initialsEl.onkeyup = checkForEnter;
