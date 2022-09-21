@@ -65,8 +65,6 @@ var sfxRight = new Audio("assets/sfx/correct.wav");
 var sfxWrong = new Audio("assets/sfx/incorrect.wav");
 
 
-//Funtions I need:
-
 function startGame(){
     start.classList.add("hidden");
     quizPage.classList.add("reveal")
@@ -159,7 +157,26 @@ function tick(){
 }
 
 
+function saveHighscore() {
 
+    var initials = initialsEl.value.trim();
+
+    if (initials !== '') {
+
+      var highscores =
+        JSON.parse(window.localStorage.getItem('highscores')) || [];
+  
+      var newScore = {
+        score: time,
+        initials: initials,
+      };
+  
+      highscores.push(newScore);
+      window.localStorage.setItem('highscores', JSON.stringify(highscores));
+  
+      window.location.href = 'highscores.html';
+    }
+  }
 
 // replayGame()
 
@@ -175,7 +192,7 @@ function tick(){
 
 
 
-
+submitBtn.onclick = saveHighscore;
 
 
 
