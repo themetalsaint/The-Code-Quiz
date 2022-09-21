@@ -10,9 +10,9 @@ var end = document.getElementById("endScreen");
 var endButtons = document.getElementById("endButtons");
 var answers = document.getElementById("answers");
 var feedbackEl = document.querySelector("#feedback");
-// var time = question.length * 15;
+//var time = questions.length * 15;
 var score = 0;
-// var startingTime = 76;
+var startingTime = 76;
 var timePenalty = 10;
 var questionIndex = 0;
 
@@ -66,17 +66,14 @@ var sfxWrong = new Audio("assets/sfx/incorrect.wav");
 
 
 function startGame(){
-    start.classList.add("hidden");
-    quizPage.classList.add("reveal")
+    var startScreenEl = document.getElementById("start-screen");
+    startScreenEl.setAttribute("class", "hide");
     
-    //start timer in here 
-    // timerID = setInterval(tick, 1000);
-
-    // //show starting time
-    // timeEl.textContent = time;
+    questionsEl.removeAttribute("class");
+    timerId = setInterval(clockTick, 1000);
+    timerEl.textContent = time;
     
     
-    //call function (need new function see below) that shows questions
     showQuestions();
 
 
@@ -89,13 +86,13 @@ function showQuestions(){
 
     triviaQuestion.textContent = activeQuestion.question;
 
-    answers.innerHTML = ""; //clears out old options
+    answers.innerHTML = ""; 
 
 
     activeQuestion.options.forEach(function(option, i){
         var optionBtns = document.createElement("button");
         optionBtns.setAttribute("value", option);
-        // optionsBtns.setAttribute("class", "btn") btn class is for styling
+        optionsBtns.setAttribute("class", "btn") //btn class is for styling
         optionBtns.textContent = i + 1 + ". " + option;
         optionBtns.onclick = clickQuestions();
 
@@ -107,26 +104,24 @@ function showQuestions(){
     }
 
 function clickQuestions(){
- // check if user guessed wrong
+ 
  if (this.value !== questions[questionIndex].answer) {
-    // penalize time
     time -= 10;
 
     if (time < 0) {
       time = 0;
     }
 
-    // display new time on page
     timeEl.textContent = time;
 
-
+    sfxWrong.play(); //Incorrect Music
     feedbackEl.textContent = "Wrong!";
   } else {
 
+    sfxRight.play(); //Correct Music
     feedbackEl.textContent = "Correct!";
   }
 
- // flash right/wrong feedback on page 
      feedbackEl.setAttribute("class", "feedback");
     setTimeout(function() {
     feedbackEl.setAttribute("class", "feedback hide");
@@ -135,15 +130,15 @@ function clickQuestions(){
     //Move on to next question
     questionIndex++;
     //Out of questions
-    // if(questionIndex === questions.length) {
-    //     quizEnd();
-    // } else {
-    //     showQuestions();
-    //     }
+    if(questionIndex === questions.length) {
+         quizEnd();
+     } else {
+         showQuestions();
+         }
     }
 
 function quizEnd(){
-    //clearInterval(timer)
+    clearInterval(timer)
 }
 
 function tick(){
@@ -192,7 +187,7 @@ function saveHighscore() {
 
 
 
-submitBtn.onclick = saveHighscore;
+// submitBtn.onclick = saveHighscore;
 
 
 
