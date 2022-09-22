@@ -10,54 +10,12 @@ var end = document.getElementById("endScreen");
 var endButtons = document.getElementById("endButtons");
 var answers = document.getElementById("answers");
 var feedbackEl = document.querySelector("#feedback");
-//var time = questions.length * 15;
+var timerEl = document.getElementById('time')
+
+var time = questions * 15;
 var score = 0;
-var startingTime = 76;
-var timePenalty = 10;
 var questionIndex = 0;
-
-//**Quiz Questions**
-
-var questions = [
-    {
-    question: "How many elements can you apply an 'ID' attribute to?",
-    options: [
-     "As many as you want", "1", "6", "12", ],
-    correctAnswer: "a"
-    },
-
-    {
-    question: "What does DOM stand for?",
-    options:["Document Object Model", "Display Object Management","Document Ordinance Model","Desktop Oriented Mode"],
-    correctAnswer: "a"
-    },
-
-    {
-    question: "What is used primarily to add styling to a web page?",
-    options: ["HTML", "CSS", "Python","The Mouse",],
-    correctAnswer: "b"},
-
-    {
-    question: "When is localStorage data cleared?",
-    options: ["No expiration time","On page reload", "On browser close", "On computer restart",],
-    correctAnswer: "a"
-    },  
-
-    {
-    question: "What HTML attribute references an external JavaScript file?",
-    options: ["href", "h1", "class", "src",],
-    correctAnswer: "d"
-    },
-
-    {
-    question: "What does WWW stand for?",
-    options: ["Web World Workings", "Window World Web", "World Wide Web", "Winston Wants Waffles"],
-    correctAnswer: "c"
-    },
-      
-];  
-
-
+var timerEl;
 
 
 //sounds
@@ -66,12 +24,12 @@ var sfxWrong = new Audio("assets/sfx/incorrect.wav");
 
 
 function startGame(){
-    var startScreenEl = document.getElementById("start-screen");
+    var startScreenEl = document.getElementById("startpage");
     startScreenEl.setAttribute("class", "hide");
     
-    questionsEl.removeAttribute("class");
-    timerId = setInterval(clockTick, 1000);
-    timerEl.textContent = time;
+    quiz.removeAttribute("class");
+    timerId = setInterval(tick, 1000);
+    // timerEl.textContent = time;
     
     
     showQuestions();
@@ -143,8 +101,8 @@ function quizEnd(){
 
 function tick(){
     //update timer
-    time--;
-    timeEl.textContent = time;
+    // time--;
+    // timeEl.textContent = time;
 
 //     if(time<=0){
 //         quizEnd();
