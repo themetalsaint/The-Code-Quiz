@@ -9,7 +9,6 @@ var timerEl = document.getElementById('time');
 var questionsEl = document.getElementById('questions');
 
 // var time = questions * 15;
-var score = 0;
 var questionIndex = 0;
 var timerEl;
 
@@ -59,15 +58,16 @@ function showQuestions(){
     }
 
 function clickQuestions(){
- 
- if (this.value !== questions[questionIndex].answer) {
+ var buttonEl = event.target;
+
+ if (buttonEl.value !== questions[questionIndex].answer) {
     time -= 10;
 
     if (time < 0) {
       time = 0;
     }
 
-    timeEl.textContent = time;
+    timerEl.textContent = time;
 
     sfxWrong.play(); //Incorrect Music
     feedbackEl.textContent = "Wrong!";
@@ -82,10 +82,9 @@ function clickQuestions(){
     feedbackEl.setAttribute("class", "feedback hide");
     }, 1000);
 
-    //Move on to next question
     questionIndex++;
-    //Out of questions
-    if(questionIndex === questions.length) {
+
+    if(time <= 0 || questionIndex === questions.length) {
          quizEnd();
      } else {
          showQuestions();
@@ -93,7 +92,15 @@ function clickQuestions(){
     }
 
 function quizEnd(){
-    clearInterval(timer)
+    clearInterval(timerEl)
+
+    var endScreenEl = document.getElementById('end-screen');
+    endScreenEl.removeAttribute('class');
+
+    var finalScoreEl = document.getElementById('final-score');
+    finalScoreEl.textContent = time;
+
+    questionsEl.setAttribute('class', 'hidden');
 }
 
 function tick(){
@@ -101,7 +108,7 @@ function tick(){
     // time--;
     // timeEl.textContent = time;
 
-//     if(time<=0){
+//     if(time <= 0){
 //         quizEnd();
 //     }
 }
@@ -109,7 +116,7 @@ function tick(){
 
 function saveHighscore() {
 
-    var initials = initialsEl.value.trim();
+    var initials = initials.value.trim();
 
     if (initials !== '') {
 
@@ -139,13 +146,13 @@ function saveHighscore() {
 
 
 // clearHighscores()
-
-
+function checkForEnter(event){
+  if (event.key === 'Enter'){
+    saveHighscore();
+  }
+}
 
 // submitBtn.onclick = saveHighscore;
-
-
-
 startBtn.onclick = startGame;
-
-// initialsEl.onkeyup = checkForEnter;
+answersEl.onclick = clickQuestions;
+initials.onkeyup = checkForEnter;
