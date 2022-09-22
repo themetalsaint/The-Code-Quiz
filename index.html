@@ -39,8 +39,13 @@
     <!-- Game Finish Page -->
     </div>
     <div id="endScreen" class ="hidden">
-      <h2>Player Initals</h2>
-      <h2>Final Score</h2>
+      <h2>The End!</h2>
+      <p>Your final score is <span id="final-score"></span>.</p>
+        <p>
+          Enter initials: <input type="text" id="initials" max="3" />
+          <button id="submit">Submit</button>
+        </p>
+      
 
       <div id="endButtons">
         <button class="button2" id="playAgain" onclick="replayQuiz()">
