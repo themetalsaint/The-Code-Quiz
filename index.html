@@ -13,7 +13,7 @@
     <p>Highscores</p>
     <p id="timer">Timer:</p>
   </header>
-  
+
   <body>
     <div class="scores"><a href="highscores.html">View Highscores</a></div>
     
@@ -28,8 +28,8 @@
     </containter>
 
     <!-- Questions Page -->
-    <div id="quizPage" class="hidden">
-        <h2 id="trivia"></h2>
+    <div id="questions" class="hidden">
+        <h2 id="question-title"></h2>
           <div id="answers">
             <div id="feedback" class="feedback hide">
             </div> 
@@ -56,13 +56,13 @@
         <button id="highscores" onclick="showHighscores()">Highscores</button>
         <form>
           <label>Intials:</label>
-          <input type="text" id="initials" /><br />
+            <input type="text" id="initials" /><br />
         </form>
       </div>
     </div>
 
     
-
+    <script src="./Assets/js/questions.js"></script>
     <script src="./Assets/js/script.js"></script>
   </body>
 </html>
