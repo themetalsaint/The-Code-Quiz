@@ -69,8 +69,8 @@ function clickQuestions(){
 
     timerEl.textContent = time;
 
-    sfxWrong.play(); //Incorrect Music
-    feedbackEl.textContent = "Wrong!";
+    // sfxWrong.play(); //Incorrect Music
+    // feedbackEl.textContent = "Wrong!";
   } else {
 
     sfxRight.play(); //Correct Music
